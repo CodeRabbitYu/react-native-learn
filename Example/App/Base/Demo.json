@@ -1,0 +1,14 @@
+{
+  "days": [{
+    "key": "1",
+    "title": "计时器",
+    "icon": "闹钟",
+    "component": "Time"
+  },{
+    "key" : "2",
+    "title" : "购物",
+    "icon": "闹钟",
+    "component": "Time"
+  }],
+  "exclude": "node_modules"
+}
