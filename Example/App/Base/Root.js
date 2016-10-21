@@ -19,7 +19,7 @@ var {width} = Dimensions.get('window');
 
 import NavBar from 'react-native-navbar';
 import Time from '../Page/OnePage/One';
-import Baby from '../Page/TwoPage/Baby/Two';
+import Baby from '../Page/TwoPage/Two';
 
 export default class Root extends React.Component {
 

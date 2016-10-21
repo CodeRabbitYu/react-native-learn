@@ -8,6 +8,7 @@ const config = {
         base:'http://rap.taobao.org/mockjsdata/8647/',
         list:'api/list',
         handle:'api/handle',
+        comments:'api/comments',
     },
     map:{
         method:'POST',

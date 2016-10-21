@@ -38,7 +38,6 @@ export default class Baby extends Component{
             <ScrollableTabView
                 // renderTabBar={() => <ScrollableTabBar/>}
                 renderTabBar={() => <RTTabBar tabNames={tabNames} tabIconNames={tabIconNames}/>}
-
                 tabBarPosition='bottom'
                 onChangeTab={
                     (obj) => {
