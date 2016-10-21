@@ -12,6 +12,7 @@
     "query-string": "^4.2.3",
     "react": "15.3.2",
     "react-native": "0.35.0",
+    "react-native-button": "^1.7.1",
     "react-native-navbar": "^1.5.4",
     "react-native-scrollable-tab-view": "^0.6.0",
     "react-native-swiper": "^1.5.2",

@@ -52,8 +52,10 @@ export default class Baby extends Component{
                 locked={false}
                 initialPage={0}
                 prerenderingSiblingsNumber={1}
+
             >
                 <Navigator
+                    onDidFocus={this.onDidFocus.bind(this)}
                     tabLabel="list"
                     initialRoute={{name:'list',component:List}}
                     configureScene={(route) => {
@@ -77,9 +79,12 @@ export default class Baby extends Component{
 
             </ScrollableTabView>
         );
+    }
+    onDidFocus(name){
 
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {

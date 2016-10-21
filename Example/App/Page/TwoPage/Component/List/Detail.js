@@ -16,7 +16,9 @@ import {
     TouchableOpacity,
     ListView,
     Image,
-    TextInput
+    TextInput,
+    Modal,
+    PixelRatio
 } from 'react-native';
 
 import VideoPlayeriOS from './VideoPlayeriOS';
@@ -30,7 +32,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Dimensions from 'Dimensions';
 const {width, height} = Dimensions.get('window');
 import LeftNavBtn from '../../../../Base/Component/leftNavBtn'
-
+import Button from 'react-native-button'
 import config from '../Common/config';
 import request from '../Common/request';
 
@@ -61,6 +63,14 @@ export default class Detail extends Component {
             isVideoOk:false,
             dataSource : ds,
             isLoadingMore:false,
+            animationType:'slide', // none slide fade
+            modalVisible:false,   // 模态场景是否可见
+            transparent:true,    // 是否透明显示
+            content:'rabbit',     // 文本输入框显示文字
+            isSendingComment:false, //评论之后连接网络的延迟
+
+
+
         };
         this.onLoadStart = this.onLoadStart.bind(this);
         this.onLoad = this.onLoad.bind(this);
@@ -82,23 +92,96 @@ export default class Detail extends Component {
         this.renderHeader = this.renderHeader.bind(this);
         //
         this.loadData = this.loadData.bind(this);
-        // 失去焦点
+        // 获得焦点
         this.onFocus = this.onFocus.bind(this);
         // 失去焦点
         this.onBlur = this.onBlur.bind(this);
 
+        this.setModalVisible = this.setModalVisible.bind(this);
+        this.startShow = this.startShow.bind(this);
+        // 关闭model
+        this.closeModal = this.closeModal.bind(this);
+        // 提交按钮
+        this.submitButton = this.submitButton.bind(this);
     }
-    // 失去焦点
+    // 提交按钮
+    submitButton(){
+        console.log('点击按钮');
+        if(!this.state.content){
+            return alert('评论内容不能为空!');
+        }
+        // 如果正在发送评论(点击按钮之后的延迟)
+        if(this.isSendingComment){
+            return alert('正在发送评论');
+        }
+        // 访问网络之前,改变发送状态, 然后调用网络请求  POST请求
+        // 第一次发送评论
+        this.setState({
+            isSendingComment:true
+        },()=>{
+            let body = {
+                accessToken:'rabbit',
+                id_video:'123',
+                content:this.state.content,
+            };
+            let url = config.api.base + config.api.comment;
+            request.post(url,body)
+                .then(
+                    (data)=>{
+                        if(data && data.success){
+                            let items = cacheResults.items.slice();
+                            // 将一条数据添加到前面的数组里面
+                            items = [{
+                                content:this.state.content,
+                                replyBy:{
+                                    nickname:'rabbit',
+                                    avatar:'http://i.gtimg.cn/music/photo/mid_singer_300/r/e/0042kZuh1dgLre.jpg'
+                                }
+                            }].concat(items);
+                            cacheResults.items = items;
+                            cacheResults.total = cacheResults.total+1;
+                            this.setState({
+                                dataSource : this.state.dataSource.cloneWithRows(cacheResults.items),
+                                isSendingComment:false
+                            });
+                            this.setModalVisible(false);
+                        }
+                    }
+                ).catch(
+                    (error)=>{
+                        console.log(error);
+                        this.setState({
+                            isSendingComment:false,
+                        });
+                        this.setModalVisible(false);
+                        alert('评论失败,请稍后重试');
+            });
+        });
+    }
+    // 关闭按钮
+    closeModal(){
+        this.setModalVisible(false);
+    }
+    // 弹出模态视图
+    setModalVisible =(visible) => {
+        this.setState({modalVisible:visible});
+    };
+    // 显示了
+    startShow(){
+        console.log('开始显示');
+    };
+    // 获得焦点
     onFocus(){
-
+        this.setModalVisible(true);
+        console.log('获得焦点');
     }
     // 失去焦点
     onBlur(){
+        console.log('失去焦点');
     }
     componentDidMount() {
         this.loadData(1);
     };
-
     loadData(page) {
         console.log("page:" + page);
         this.setState({
@@ -394,8 +477,7 @@ export default class Detail extends Component {
                     </View>
 
                 </View>
-
-                {/*作者信息部分*/}
+                {/*作者信息,用户评论*/}
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
@@ -407,6 +489,53 @@ export default class Detail extends Component {
                     renderFooter={this.renderFooter}
                     renderHeader={this.renderHeader}
                 />
+
+                <Modal
+                    animationType={this.state.animationType}
+                    transparent={this.state.transparent}
+                    visible={this.state.modalVisible}
+                    // 关闭
+                    onRequestClose={() => {
+                        this.setModalVisible(false)
+                    }}
+                    // 开启
+                    onShow={this.startShow}
+                >
+                    {/*模态的视图*/}
+                    <View style={styles.modalContainer}>
+                         <Icon
+                             name="ios-close-outline"
+                             size={45}
+                             onPress={this.closeModal}
+                             style={styles.closeIcon}
+                         />
+                        <View style={styles.commentStyle}>
+                            <View style={styles.commentView}>
+                                <TextInput
+                                    placeholder='评论一下咯'
+                                    style={styles.textInputStyle}
+                                    // 多行
+                                    multiline={true}
+                                    defaultValue={this.state.content}
+                                    onChangeText={(text)=>{
+                                        this.setState({
+                                            content:text
+                                        })
+                                    }}
+                                    onFocus={this.onFocus}
+                                    onBlur={this.onBlur}
+                                />
+                            </View>
+                            <Button
+                                style={styles.submitButtonStyle}
+                                onPress={this.submitButton}
+                            >
+                                评论一下
+                            </Button>
+                        </View>
+                    </View>
+                </Modal>
+
             </View>
         );
     }
@@ -592,6 +721,29 @@ const styles = StyleSheet.create({
     commentTextStyle:{
         fontSize:15,
         color:'red'
+    },
+    // 弹出页面的样式
+    modalContainer:{
+        flex:1,
+        paddingTop:45,
+        backgroundColor:'white'
+    },
+    // 关闭按钮样式
+    closeIcon:{
+        fontSize:30,
+        margin:10,
+        color:'black',
+    },
+    // 提交按钮样式
+    submitButtonStyle:{
+        width:width-20,
+        padding:16,
+        marginTop:20,
+        borderWidth:1,
+        borderColor:'red',
+        borderRadius:4,
+        color:'blue',
+        fontSize:18
     }
 
 });
