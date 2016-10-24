@@ -228,7 +228,7 @@ export default class Detail extends Component {
             }
         );
     };
-
+    // 顶部输入框 => 跳转新页面
     renderHeader=()=>{
         let rowData = this.state.rowData;
         return(
@@ -244,6 +244,7 @@ export default class Detail extends Component {
                     <View style={styles.commentView}>
                         <TextInput
                             placeholder='评论一下咯'
+                            underlineColorAndroid='transparent'
                             style={styles.textInputStyle}
                             // 多行
                             multiline={true}
@@ -693,9 +694,11 @@ const styles = StyleSheet.create({
         padding:8,
         width:width
     },
-    // 输入框外层View
+    // 顶部输入框外层View
     commentView: {
-
+        borderWidth:1,
+        borderColor:'#ddd',
+        borderRadius:4,
     },
     // 输入框
     textInputStyle:{

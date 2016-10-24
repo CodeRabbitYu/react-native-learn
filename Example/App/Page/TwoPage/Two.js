@@ -16,7 +16,8 @@ import ScrollableTabView, {DefaultTabBar, ScrollableTabBar} from 'react-native-s
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFont from 'react-native-vector-icons/FontAwesome';
 
-import Account from './Component/Account/Account';
+import Account from './Component/Account/Login';
+import Login from './Component/Account/Login'
 import Edit from './Component/Edit/Edit';
 import List from './Component/List/List';
 import Picture from './Component/Picture/Picture';
