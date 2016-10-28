@@ -84,3 +84,17 @@ componentDidMount(){
 ```
 8.
 
+### 推荐的第三方开源组件（我只写我用到过的，感觉很不错的库）
+1. 导航条组件：[react-native-navbar](https://github.com/react-native-community/react-native-navbar)  
+推荐原因：用过系统Navigator组件后，一般都需要自己自定制导航条的按钮和标题，用了这个组件会剩下很多的步骤。这个组件在我的项目中一直用到；
+2. 底部TabBar组件：[react-native-tab-navigator](https://github.com/exponentjs/react-native-tab-navigator)  
+推荐原因：多数的APP都会存在底部的选项卡，这个组件就是用来实现这个的。这个组件在我的项目中宝宝云有用到；
+3. 底部TabBar组件：[react-native-scrollable-tab-view](https://github.com/skv-headless/react-native-scrollable-tab-view)  
+推荐原因：用过安卓版微信的用户知道，底部的TabBar是可以左右滚动的，这个组件就可以实现这个功能。这个组件会在之后用到；
+4. 图标：[react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)  
+推荐原因：这个组件可以为你省去找UI要图片的步骤，而且这个组件可以用在很多地方，据说使用这个组件会让图标的加载更流畅。这个组件在项目中很多地方有用到；
+5. 轮播图：[react-native-swiper](react-native-swiper)  
+推荐原因：这个组件可以用来做为广告轮播图，页面切换等等，反正是很抢到的一个库。这个组件在项目中很多地方有用到；
+6. 视频播放：[react-native-video](http://serve.3ezy.com/github.com/brentvatne/react-native-video/)  
+推荐原因：一个类似于HTML5中<Video>标签的视频播放器，反正是很不错的
+

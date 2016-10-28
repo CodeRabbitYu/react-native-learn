@@ -10,7 +10,8 @@ const config = {
         handle:'api/handle',
         comments:'api/comments',//评论数量
         comment:'api/comment', //
-
+        signup:'api/user/signup',//发送验证码
+        verify:'api/user/verify',// 登录验证
     },
     map:{
         method:'POST',
