@@ -9,6 +9,8 @@
 
 #import "AppDelegate.h"
 
+#import "TestController.h"
+
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 
@@ -29,9 +31,20 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  rootViewController.navigationItem.title = @"Hello World!";
+
+  // 初始化Nav
+  _nav = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+  
+  self.window.rootViewController = _nav;
   [self.window makeKeyAndVisible];
+  
+  
+
+  
   return YES;
 }
+
+
 
 @end

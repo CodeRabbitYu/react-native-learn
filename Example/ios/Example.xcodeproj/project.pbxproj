@@ -25,6 +25,8 @@
 		1E84107B31FB494988C5A9B9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF755A8847486191F3168C /* FontAwesome.ttf */; };
 		29E4A2C671FF4706885DA8AF /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A53C0D58EF0E45E28289EAE0 /* libRNImagePicker.a */; };
 		5C9A9CED37E0445890B14101 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8053F5DF4266414990CD4A29 /* libRCTVideo.a */; };
+		65806F5C1DC71065005B3DEC /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F5B1DC71065005B3DEC /* TestController.m */; };
+		65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F6B1DC713A7005B3DEC /* PushNative.m */; };
 		65D9256D1DB7674800D5C34E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925651DB7674800D5C34E /* Entypo.ttf */; };
 		65D9256E1DB7674800D5C34E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925661DB7674800D5C34E /* EvilIcons.ttf */; };
 		65D9256F1DB7674800D5C34E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925671DB7674800D5C34E /* FontAwesome.ttf */; };
@@ -167,6 +169,10 @@
 		142AB2E69087465CA6A4A57D /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1DFF755A8847486191F3168C /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		65806F5A1DC71065005B3DEC /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		65806F5B1DC71065005B3DEC /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
+		65806F6A1DC713A7005B3DEC /* PushNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNative.h; sourceTree = "<group>"; };
+		65806F6B1DC713A7005B3DEC /* PushNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNative.m; sourceTree = "<group>"; };
 		65D925651DB7674800D5C34E /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
 		65D925661DB7674800D5C34E /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		65D925671DB7674800D5C34E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -302,6 +308,10 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				65806F5A1DC71065005B3DEC /* TestController.h */,
+				65806F5B1DC71065005B3DEC /* TestController.m */,
+				65806F6A1DC713A7005B3DEC /* PushNative.h */,
+				65806F6B1DC713A7005B3DEC /* PushNative.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -722,6 +732,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				65806F5C1DC71065005B3DEC /* TestController.m in Sources */,
+				65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

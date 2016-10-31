@@ -11,7 +11,8 @@ import {
     Image,
     ListView,
     TouchableOpacity,
-    InteractionManager
+    InteractionManager,
+    NativeModules
 } from 'react-native';
 
 var Dimensions = require('Dimensions');
@@ -20,6 +21,7 @@ var {width} = Dimensions.get('window');
 import NavBar from 'react-native-navbar';
 import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
+var Push = NativeModules.PushNative;
 
 export default class Root extends React.Component {
 
@@ -50,6 +52,11 @@ export default class Root extends React.Component {
                 title : "宝宝秀",
                 icon: "宝宝",
                 component: Baby
+            },{
+                key : 3,
+                title : "跳转",
+                icon: "跳转",
+                component: Push
             }],
                 exclude: "node_modules"
         }
@@ -57,21 +64,14 @@ export default class Root extends React.Component {
     }
 
     render() {
-        var titleConfig = {
-            title: 'Hello, world',
-            style: {color:'red',fontSize:18}
-        };
-
         return (
             <View style={{ flex: 1 }}>
-                <NavBar
-                    title={titleConfig}
-                    style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
-                />
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={(rowData,rowID,sectionID)=>this.renderRow(rowData,rowID,sectionID)}
                     contentContainerStyle={styles.contentViewStyle}
+                    automaticallyAdjustContentInsets={true}
+                    style={{marginTop:64}}
                 />
             </View>
         )
@@ -96,7 +96,7 @@ export default class Root extends React.Component {
             <View style={{width:width/4,height:width/4+10}}>
                 <TouchableOpacity
                     onPress={()=>this.jumpToDay(sectionID)}>
-                    <Image source={{uri:rowData.icon}} style={{width:width/4,height:width/4}} />
+                    <Image source={{uri:rowData.icon}} style={{width:width/4-10,height:width/4-10,resizeMode:'cover'}} />
                     <Text style={{textAlign:'center'}}>{rowData.title}</Text>
                 </TouchableOpacity>
             </View>
@@ -104,16 +104,21 @@ export default class Root extends React.Component {
     }
 
     jumpToDay(index){
-        var days = this.state.days[index];
-        let {navigator} = this.props;
-        if (navigator) {
-            InteractionManager.runAfterInteractions(()=> {
-                navigator.push({
-                    title: days.title,
-                    index: index + 1,
-                    component: days.component
-                })
-            });
+        if(index == 2){
+            console.log(index);
+            Push.RNOpenOneVC('测试');
+        }else {
+            var days = this.state.days[index];
+            let {navigator} = this.props;
+            if (navigator) {
+                InteractionManager.runAfterInteractions(()=> {
+                    navigator.push({
+                        title: days.title,
+                        index: index + 1,
+                        component: days.component
+                    })
+                });
+            }
         }
     }
 

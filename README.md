@@ -1,20 +1,30 @@
 # Learn React-Native
 ## Example
-这个工程是我学习react-native的总结，我会把每天学到的东西，遇到的问题，总结的经验放在里面，希望以后再遇到问题的时候可以找到解决的办法，也希望可能帮到其他人。
+这个工程是我学习react-native的总结，我会把学到的东西，遇到的问题，总结的经验放在里面，希望以后再遇到问题的时候可以找到解决的办法，也希望可能帮到其他人。
 ## OnePage:
 这是一个关于计时器使用的例子,是我通过学习[30-days-of-react-native](https://github.com/fangwei716/30-days-of-react-native)第一天的内容得到的。
 ## TwoPage:
 这是一个宝宝秀项目，是照着网上的一个付费视频写的，已经完成了第一个模块的功能开发，有视频播放与暂停，评论功能，接口的调用。这个会一直更新的这个项目结束。
+## ThreePage:
+这是react-native页面跳转到原生页面的案例，过两天会把整个流程完善。
+这个是我之前写的一篇关于[在iOS中创建React-Native页面，并跳转到原生页面](http://www.jianshu.com/p/ffe9e8b8dbe6)的文章
 ### 经验：
 * 计时器的一些使用方式  
 
 `setInterval()`    会不停地调用函数。
 
 ```
-this.setIntervar = setInterval(()=>{}) 
+// 最后的参数指每隔1s调用一次函数
+this.setIntervar = setInterval(()=>{},1000) 
 ``` 
-   `setTimeout()`     只调用函数一次。  
-   `clearInterval()`  可以关闭setInterval()。  
+
+`setTimeout()`     只调用函数一次。  
+
+```
+this.setTimeout = setTimeout(()=>{},1000)
+```
+
+`clearInterval()`  可以关闭setInterval()。  
     
 ```
 this.setIntervar && clearInterval(this.setIntervar);
@@ -113,7 +123,29 @@ fetch(url ,{
             }
         });
 ```
-* s
+* 在RN里面同一个页面是可以写两个类的，但只能导出一个`export`，一般情况下第二个类都是对第一个的补充，所以最好在第二个类中公开一些方法
+
+```
+class ImageItem extends Component {
+    static defaultProps = {
+        // 比如说第一个类需要封装一个图片组件，那个给下面的类传一个imageName就可以了
+        imageName: '',
+    };
+    render(){
+        return(
+            <Image source={{uri:this.props.imageName}} style={styles.imageStyle} />
+        )
+    }
+}
+```
+在第一个组件中通过调用ImageItem就可以了，将需要的参数传过去。
+
+```
+<ImageItem 
+    imageName={}
+/>
+```
+
 
 
 ### 推荐的第三方开源组件（我只写我用到过的，感觉很不错的库，在后面我会为这些库写一些文章把我遇到的问题写出来）
