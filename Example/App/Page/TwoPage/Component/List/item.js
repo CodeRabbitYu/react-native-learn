@@ -69,7 +69,6 @@ export default class Item extends Component {
                             name="ios-play"
                             size={28}
                             style={styles.playStyle}
-
                         />
                     </Image>
                     <View style={styles.itemFootStyle}>
