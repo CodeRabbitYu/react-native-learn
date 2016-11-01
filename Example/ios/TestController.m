@@ -24,7 +24,7 @@
     self.navigationItem.title = @"我是原生页面哟~";
   
     self.view.backgroundColor = [UIColor whiteColor];
-  
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doPushNotification:) name:@"RNOpenOneVC" object:nil];
   
 }

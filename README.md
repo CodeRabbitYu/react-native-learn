@@ -7,7 +7,8 @@
 这是一个宝宝秀项目，是照着网上的一个付费视频写的，已经完成了第一个模块的功能开发，有视频播放与暂停，评论功能，接口的调用。这个会一直更新的这个项目结束。
 ## ThreePage:
 这是react-native页面跳转到原生页面的案例，过两天会把整个流程完善。
-这个是我之前写的一篇关于[在iOS中创建React-Native页面，并跳转到原生页面](http://www.jianshu.com/p/ffe9e8b8dbe6)的文章
+这个是我之前写的一篇关于[在iOS中创建React-Native页面，并跳转到原生页面](http://www.jianshu.com/p/ffe9e8b8dbe6)的文章,
+今天在简书上更新了一篇文章[在react-native的项目中跳转到原生iOS页面](http://www.jianshu.com/p/2baeac04275e)
 ### 经验：
 * 计时器的一些使用方式  
 
@@ -35,6 +36,7 @@ this.setIntervar && clearInterval(this.setIntervar);
 ```  
  InteractionManager.runAfterInteractions(() => {
   // ...耗时较长的同步的任务...
+  // 比如页面跳转
 });
 ```
 
