@@ -17,6 +17,17 @@
 
 @implementation TestController
 
+- (void)viewWillAppear:(BOOL)animated{
+  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+  [app.nav setNavigationBarHidden:NO animated:animated];
+  [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+  [app.nav setNavigationBarHidden:YES animated:animated];
+  [super viewWillDisappear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +35,12 @@
     self.navigationItem.title = @"我是原生页面哟~";
   
     self.view.backgroundColor = [UIColor whiteColor];
-    
+  
+  UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+  [button setTitle:@"点击我，跳转到RN页面呦~" forState:(UIControlStateNormal)];
+  
+  [self.view addSubview:button];
+  
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doPushNotification:) name:@"RNOpenOneVC" object:nil];
   
 }

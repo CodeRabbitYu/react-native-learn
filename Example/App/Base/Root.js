@@ -57,21 +57,41 @@ export default class Root extends React.Component {
                 title : "跳转",
                 icon: "跳转",
                 component: Push
-            }],
+            },{
+                key : 3,
+                title : "跳转",
+                icon: "跳转",
+                component: Push
+            },{
+                key : 3,
+                title : "跳转",
+                icon: "跳转",
+                component: Push
+            }
+          ],
                 exclude: "node_modules"
         }
+
+        this.renderRow = this.renderRow.bind(this);
 
     }
 
     render() {
+        var titleConfig = {
+            title: 'Hello World!',
+            style: {color:'black',fontSize:20,fontWeight:'600'}
+        };
         return (
             <View style={{ flex: 1 }}>
+                {/*导航条*/}
+                <NavBar
+                    title={titleConfig}
+                    style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
+                />
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={(rowData,rowID,sectionID)=>this.renderRow(rowData,rowID,sectionID)}
+                    renderRow={this.renderRow}
                     contentContainerStyle={styles.contentViewStyle}
-                    automaticallyAdjustContentInsets={true}
-                    style={{marginTop:64}}
                 />
             </View>
         )
@@ -93,10 +113,10 @@ export default class Root extends React.Component {
         // )
 
         return(
-            <View style={{width:width/4,height:width/4+10}}>
+            <View style={{width:width/4,height:width/4}}>
                 <TouchableOpacity
                     onPress={()=>this.jumpToDay(sectionID)}>
-                    <Image source={{uri:rowData.icon}} style={{width:width/4-10,height:width/4-10,resizeMode:'cover'}} />
+                    <Image source={{uri:rowData.icon}} style={{width:width/4,height:width/4,resizeMode:'cover'}} />
                     <Text style={{textAlign:'center'}}>{rowData.title}</Text>
                 </TouchableOpacity>
             </View>

@@ -82,12 +82,14 @@ export default class Time extends React.Component {
         return(
             <View style={{flex:1,backgroundColor:'#f7f7f7',
                 }}>
+                {/*popToHome ={() => this.popToHome()}*/}
+
                 <NavBar
                     title={titleConfig}
                     style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                     leftButton={
                         <LeftNavBtn
-                            popToHome ={() => this.popToHome()}
+                            onPress={()=>this.popToHome()}
                         />
                     }
                 />

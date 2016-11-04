@@ -25,7 +25,7 @@ export default class leftNavBtn extends Component {
     render() {
         const charmander = 'http://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/d/d4/Charmander.gif';
         return (
-            <TouchableOpacity onPress={() => this.popTopHome()}>
+            <TouchableOpacity onPress={this.props.onPress}>
                 <Icon
                     name="ios-arrow-back-outline"   //图片名连接,可以到这个网址搜索:http://ionicons.com/, 使用时:去掉前面的 "icon-" !!!!
                     size={30}   //图片大小

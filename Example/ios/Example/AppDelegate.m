@@ -35,7 +35,7 @@
 
   // 初始化Nav
   _nav = [[UINavigationController alloc]initWithRootViewController:rootViewController];
-  
+  _nav.navigationBarHidden = YES;
   self.window.rootViewController = _nav;
   [self.window makeKeyAndVisible];
   
