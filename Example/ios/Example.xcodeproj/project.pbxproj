@@ -27,6 +27,8 @@
 		5C9A9CED37E0445890B14101 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8053F5DF4266414990CD4A29 /* libRCTVideo.a */; };
 		65806F5C1DC71065005B3DEC /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F5B1DC71065005B3DEC /* TestController.m */; };
 		65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F6B1DC713A7005B3DEC /* PushNative.m */; };
+		65A19D051DCDBBFC003C4996 /* PushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A19D041DCDBBFC003C4996 /* PushButton.m */; };
+		65A19D181DCDBEFA003C4996 /* PushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A19D171DCDBEFA003C4996 /* PushView.m */; };
 		65D9256D1DB7674800D5C34E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925651DB7674800D5C34E /* Entypo.ttf */; };
 		65D9256E1DB7674800D5C34E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925661DB7674800D5C34E /* EvilIcons.ttf */; };
 		65D9256F1DB7674800D5C34E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925671DB7674800D5C34E /* FontAwesome.ttf */; };
@@ -173,6 +175,10 @@
 		65806F5B1DC71065005B3DEC /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
 		65806F6A1DC713A7005B3DEC /* PushNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNative.h; sourceTree = "<group>"; };
 		65806F6B1DC713A7005B3DEC /* PushNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNative.m; sourceTree = "<group>"; };
+		65A19D031DCDBBFC003C4996 /* PushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushButton.h; sourceTree = "<group>"; };
+		65A19D041DCDBBFC003C4996 /* PushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushButton.m; sourceTree = "<group>"; };
+		65A19D161DCDBEFA003C4996 /* PushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushView.h; sourceTree = "<group>"; };
+		65A19D171DCDBEFA003C4996 /* PushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushView.m; sourceTree = "<group>"; };
 		65D925651DB7674800D5C34E /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
 		65D925661DB7674800D5C34E /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		65D925671DB7674800D5C34E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -312,6 +318,10 @@
 				65806F5B1DC71065005B3DEC /* TestController.m */,
 				65806F6A1DC713A7005B3DEC /* PushNative.h */,
 				65806F6B1DC713A7005B3DEC /* PushNative.m */,
+				65A19D031DCDBBFC003C4996 /* PushButton.h */,
+				65A19D041DCDBBFC003C4996 /* PushButton.m */,
+				65A19D161DCDBEFA003C4996 /* PushView.h */,
+				65A19D171DCDBEFA003C4996 /* PushView.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -731,10 +741,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A19D181DCDBEFA003C4996 /* PushView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				65806F5C1DC71065005B3DEC /* TestController.m in Sources */,
 				65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				65A19D051DCDBBFC003C4996 /* PushButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

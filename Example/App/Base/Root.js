@@ -12,7 +12,8 @@ import {
     ListView,
     TouchableOpacity,
     InteractionManager,
-    NativeModules
+    NativeModules,
+    requireNativeComponent
 } from 'react-native';
 
 var Dimensions = require('Dimensions');
@@ -22,6 +23,8 @@ import NavBar from 'react-native-navbar';
 import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
 var Push = NativeModules.PushNative;
+// var ShareBt = requireNativeComponent('PushButton', PushButton);
+import PushButton from './Component/PushButton';
 
 export default class Root extends React.Component {
 
@@ -57,17 +60,7 @@ export default class Root extends React.Component {
                 title : "跳转",
                 icon: "跳转",
                 component: Push
-            },{
-                key : 3,
-                title : "跳转",
-                icon: "跳转",
-                component: Push
-            },{
-                key : 3,
-                title : "跳转",
-                icon: "跳转",
-                component: Push
-            }
+            },
           ],
                 exclude: "node_modules"
         }
@@ -88,6 +81,9 @@ export default class Root extends React.Component {
                     title={titleConfig}
                     style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                 />
+
+                <PushButton />
+
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
