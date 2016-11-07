@@ -9,8 +9,14 @@
 
 #import "AppDelegate.h"
 #import "PushButton.h"
+
 #import "RCTComponent.h"
 
+// 跳转页面相关
+#import "RCTRootView.h"
+#import "RCTBundleURLProvider.h"
+
+#import "RCTNavigator.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -46,8 +52,32 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
   
-//    [self.view addSubview:btn];
+  UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+  button.frame = CGRectMake(SCREEN_WIDTH / 2 - 150, 100, 300, 100);
+  button.backgroundColor = [UIColor redColor];
+  [button setTitle:@"点击我，跳转到React-Native页面" forState:(UIControlStateNormal)];
+  [button addTarget:self action:@selector(click) forControlEvents:(UIControlEventTouchUpInside)];
+  [self.view addSubview:button];
 
+}
+
+- (void)click{
+  UIViewController *RN = [[UIViewController alloc]init];
+  
+  NSURL *jsCodeLocation;
+  
+  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
+  
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                      moduleName:@"Three"
+                                               initialProperties:nil
+                                                   launchOptions:nil];
+  RN.view = rootView;
+  
+  RCTNavigator *nav = [[RCTNavigator alloc]initWithBridge:rootView];
+  
+  [self.navigationController pushViewController:nav animated:YES];
+  
   
 }
 

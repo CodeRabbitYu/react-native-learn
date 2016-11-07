@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import Root from './App/Root';
+import Two from './App/Page/ThreePage/Three'
 
 
 AppRegistry.registerComponent('Example', () => Root);

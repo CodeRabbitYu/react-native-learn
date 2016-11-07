@@ -149,4 +149,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: width
     },
-})
+});
+
