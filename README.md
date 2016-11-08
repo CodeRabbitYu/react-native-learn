@@ -163,5 +163,5 @@ class ImageItem extends Component {
 推荐原因：这个组件可以用来做为广告轮播图，页面切换等等，反正是很抢到的一个库。这个组件在项目中很多地方有用到；
 6. 视频播放：[react-native-video](http://serve.3ezy.com/github.com/brentvatne/react-native-video/)  
 推荐原因：一个类似于HTML5中`<Video>`标签的视频播放器，可以实现视频的自动播放，暂停等等。在TwoPage中有用到；
-7. 未完待续
+7. 未完待续（最近在做项目，还没完成，稍后更新）
 
