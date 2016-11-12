@@ -7,19 +7,48 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    NativeModules
 } from 'react-native';
 
-// var PageNavigator = require('PageNavigator')
+import PushButton from './PushButton';
 
+class PageOne extends Component {
+
+    render() {
+
+        return(
+            <View style={{justifyContent: 'center',alignItems: 'center',marginTop:100}}>
+                <Text style={styles.welcome}>这是页面一！</Text>
+            </View>
+        );
+    }
+}
 
 export default class Three extends Component {
     render() {
+        // var  { launchOptions }  = this.props;
+        // if (launchOptions && launchOptions.componentName) {
+        //     switch (launchOptions.componentName) {
+        //         case 'PageOne':
+        //             return(
+        //                 <PageOne/>
+        //             );
+        //             break;
+        //         default:
+        //
+        //     }
+        // }
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome} onPress={()=>this.props.navigator.pop()}>
-                    Welcome to Three!
+                <Text style={styles.welcome}>
+                    我是react-native页面
                 </Text>
+
+
+                <PushButton
+                    style = {styles.pushButtonStyle}
+                />
             </View>
         );
     }
@@ -28,19 +57,23 @@ export default class Three extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: 'red',
     },
     welcome: {
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'center',
         margin: 10,
     },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+    pushButtonStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width:100,
+        height:100,
+        // backgroundColor:'blue',
+        alignSelf:'center',
+        marginTop:150
     },
 });
 

@@ -22,7 +22,12 @@
 // 按钮分享事件
 - (void)click {
   NSLog(@"我是原生按钮点击事件呦");
-  
+  [self.ClickDelagate ButtonClicked];
 }
+
+- (void)setBtnTitle:(NSString *)btnTitle{
+  [self setTitle:btnTitle forState:(UIControlStateNormal)];
+}
+
 
 @end

@@ -24,7 +24,7 @@ import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
 var Push = NativeModules.PushNative;
 // var ShareBt = requireNativeComponent('PushButton', PushButton);
-import PushButton from './Component/PushButton';
+import PushButton from '../Page/ThreePage/PushButton';
 
 export default class Root extends React.Component {
 
@@ -82,7 +82,9 @@ export default class Root extends React.Component {
                     style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                 />
 
-                <PushButton />
+                <PushButton
+                    style={{width:100,height:100,backgroundColor:'red'}}
+                />
 
                 <ListView
                     dataSource={this.state.dataSource}

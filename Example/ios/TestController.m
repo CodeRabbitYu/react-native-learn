@@ -6,6 +6,7 @@
 //
 
 #import "TestController.h"
+#import "PushController.h"
 
 #import "AppDelegate.h"
 #import "PushButton.h"
@@ -16,16 +17,14 @@
 #import "RCTRootView.h"
 #import "RCTBundleURLProvider.h"
 
-#import "RCTNavigator.h"
+#import "ReactView.h"
+
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
 @interface TestController ()
-
-/** <#type#> */
-@property (nonatomic) PushView *pushView;
 
 @end
 
@@ -50,35 +49,25 @@
     self.navigationItem.title = @"我是原生页面哟~";
   
     self.view.backgroundColor = [UIColor whiteColor];
+  
+//  ReactView *reactView = [[ReactView alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 200)];
+//  
+//  [self.view addSubview:reactView];
 
   
   UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
-  button.frame = CGRectMake(SCREEN_WIDTH / 2 - 150, 100, 300, 100);
+  button.frame = CGRectMake(SCREEN_WIDTH / 2 - 150, 80, 300, 80);
   button.backgroundColor = [UIColor redColor];
   [button setTitle:@"点击我，跳转到React-Native页面" forState:(UIControlStateNormal)];
   [button addTarget:self action:@selector(click) forControlEvents:(UIControlEventTouchUpInside)];
   [self.view addSubview:button];
-
+  
 }
 
 - (void)click{
-  UIViewController *RN = [[UIViewController alloc]init];
   
-  NSURL *jsCodeLocation;
-  
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
-  
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"Three"
-                                               initialProperties:nil
-                                                   launchOptions:nil];
-  RN.view = rootView;
-  
-  RCTNavigator *nav = [[RCTNavigator alloc]initWithBridge:rootView];
-  
-  [self.navigationController pushViewController:nav animated:YES];
-  
-  
+  PushController *push = [[PushController alloc]init];
+  [self.navigationController pushViewController:push animated:YES];
 }
 
 

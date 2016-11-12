@@ -7,8 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PushView.h"
-
 
 @interface TestController : UIViewController
 

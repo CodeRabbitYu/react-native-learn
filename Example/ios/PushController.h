@@ -1,5 +1,5 @@
 //
-//  PushView.h
+//  PushController.h
 //  Example
 //
 //  Created by 郭洪安 on 2016/11/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PushView : UIView
+@interface PushController : UIViewController
 
 @end
