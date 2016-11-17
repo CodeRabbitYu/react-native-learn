@@ -11,9 +11,11 @@
 #import "TestController.h"
 #import "AppDelegate.h"
 
+#import "RCTViewManager.h"
+
 @implementation PushNative
 
-RCT_EXPORT_MODULE(PushNative)
+RCT_EXPORT_MODULE()
 //RN跳转原生界面
 RCT_EXPORT_METHOD(RNOpenOneVC:(NSString *)msg){
   
@@ -28,13 +30,5 @@ RCT_EXPORT_METHOD(RNOpenOneVC:(NSString *)msg){
     [app.nav pushViewController:one animated:YES];
   });
 }
-
-//RN跳转原生界面
-RCT_EXPORT_METHOD(pushBtn:(UIView *)view){
-  
-  //主要这里必须使用主线程发送,不然有可能失效
-}
-
-
 
 @end

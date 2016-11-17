@@ -1,17 +1,19 @@
 /**
- * Created by SLPower on 2016/11/17.
+ * Created by SLPower on 2016/11/12.
  */
 import React, { Component, PropTypes } from 'react';
 import {
-    requireNativeComponent
+    AppRegistry,
+    NativeModules,
+    requireNativeComponent,
+    Text
 } from 'react-native';
 
-var PushManager = requireNativeComponent('RCTPushView', PushView);
+let PushManager = requireNativeComponent('PushManager', PushView);
 
 
 export default class PushView extends Component {
     render() {
-        console.log("zzzzzzz");
         return (
             <PushManager {...this.props} />
         );

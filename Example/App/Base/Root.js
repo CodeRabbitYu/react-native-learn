@@ -22,9 +22,13 @@ var {width} = Dimensions.get('window');
 import NavBar from 'react-native-navbar';
 import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
+import Cycle from '../Page/FourPage/Four';
 var Push = NativeModules.PushNative;
+
 // var ShareBt = requireNativeComponent('PushButton', PushButton);
+
 import PushButton from '../Page/ThreePage/PushButton';
+
 
 export default class Root extends React.Component {
 
@@ -60,7 +64,13 @@ export default class Root extends React.Component {
                 title : "跳转",
                 icon: "跳转",
                 component: Push
+            },{
+                key : 4,
+                title : "周期",
+                icon: "周期",
+                component:Cycle
             },
+
           ],
                 exclude: "node_modules"
         }
@@ -68,6 +78,7 @@ export default class Root extends React.Component {
         this.renderRow = this.renderRow.bind(this);
 
     }
+    
 
     render() {
         var titleConfig = {
@@ -81,10 +92,7 @@ export default class Root extends React.Component {
                     title={titleConfig}
                     style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                 />
-
-                <PushButton
-                    style={{width:100,height:100,backgroundColor:'red'}}
-                />
+                
 
                 <ListView
                     dataSource={this.state.dataSource}
@@ -118,7 +126,7 @@ export default class Root extends React.Component {
                     <Text style={{textAlign:'center'}}>{rowData.title}</Text>
                 </TouchableOpacity>
             </View>
-        )
+        );
     }
 
     jumpToDay(index){

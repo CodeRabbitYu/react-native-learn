@@ -11,6 +11,7 @@
 #import "RCTRootView.h"
 
 #import "ReactView.h"
+#import "RCTBundleURLProvider.h"
 
 @interface PushController ()
 
@@ -24,8 +25,8 @@
   self.view.backgroundColor = [UIColor whiteColor];
   
   NSURL *jsCodeLocation;
-  
-  //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
+//  
+//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
   NSString * strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
   
   jsCodeLocation = [NSURL URLWithString:strUrl];
@@ -39,8 +40,10 @@
                                                                        }
                                                                    }
                                                    launchOptions:nil];
-  ReactView *reactView = [[ReactView alloc]initWithFrame:self.view.bounds];
-  self.view = reactView;
+  self.view = rootView;
+  
+//  ReactView *reactView = [[ReactView alloc]initWithFrame:self.view.bounds];
+//  self.view = reactView;
 }
 
 - (void)viewWillAppear:(BOOL)animated{

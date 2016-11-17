@@ -26,6 +26,32 @@ class PageOne extends Component {
 }
 
 export default class Three extends Component {
+
+    // 组件要不要更新
+    shouldComponentUpdate() {
+        return true;
+    }
+    // 组件将要更新
+    componentWillUpdate(){
+
+    }
+
+    // 组件已经更新
+    componentDidUpdate() {
+
+    }
+
+    // 组件将要加载
+    componentWillMount() {
+
+    }
+
+    // 在调用render之后,组件已经加载
+    componentDidMount() {
+
+    }
+
+    // 组件加载
     render() {
         // var  { launchOptions }  = this.props;
         // if (launchOptions && launchOptions.componentName) {
@@ -47,8 +73,9 @@ export default class Three extends Component {
 
 
                 <PushButton
-                    style = {styles.pushButtonStyle}
-                />
+                    style={{width:100,height:100}}
+                    />
+
             </View>
         );
     }

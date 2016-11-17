@@ -10,20 +10,17 @@
 
 @implementation PushView
 
-- (instancetype)init {
-  if (self = [super init]) {
-    UILabel * title = ({
-      UILabel * label = [[UILabel alloc] init];
-      label.frame = CGRectMake(100, 100, 200, 200);
-      label.text = @"我是原生UI";
-      label.textColor = [UIColor blackColor];
-      label.backgroundColor = [UIColor blueColor];
-      
-      label;
-    });
-    
-    [self addSubview:title];
+- (instancetype) initWithFrame:(CGRect)frame{
+  if ((self = [super initWithFrame:frame])) {
+    [self setTitle:@"Cain" forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
   }
   return self;
 }
+
+- (void)click {
+  NSLog(@"123");
+}
+
 @end

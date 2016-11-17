@@ -10,10 +10,9 @@
 
 @implementation PushButton
 
-//分享按钮初始化
 - (instancetype) initWithFrame:(CGRect)frame{
   if ((self = [super initWithFrame:frame])) {
-    [self addTarget:self action:@selector(click)
+    [self addTarget:self action:@selector(share)
    forControlEvents:UIControlEventTouchUpInside];
   }
   return self;
@@ -26,7 +25,7 @@
 }
 
 - (void)setBtnTitle:(NSString *)btnTitle{
-  [self setTitle:btnTitle forState:(UIControlStateNormal)];
+  [self setTitle:@"为什么啊！！！" forState:(UIControlStateNormal)];
 }
 
 

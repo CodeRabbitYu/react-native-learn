@@ -11,6 +11,8 @@ import {
     Image,
 } from 'react-native';
 
+html:5
+
 import Root from '../Base/Root';
 
 export default class App extends React.Component {
@@ -29,9 +31,11 @@ export default class App extends React.Component {
                     renderScene={(route, navigator) => {
                         let Component = route.component;
                         return (
-                            <Component navigator = {navigator} route = {route} {...route.passProps} />
+                            <Component navigator = {navigator} route = {route} {...route.passProps} 
+                            />
                         )
-                    } }
+                    } 
+                }
                 />
             </View>
         )

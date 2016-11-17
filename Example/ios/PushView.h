@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PushView : UIView
+@interface PushView : UIButton
+
+- (instancetype) initWithFrame:(CGRect)frame;
+
 
 @end

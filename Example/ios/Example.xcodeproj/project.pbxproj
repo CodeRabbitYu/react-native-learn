@@ -29,8 +29,8 @@
 		65806F5C1DC71065005B3DEC /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F5B1DC71065005B3DEC /* TestController.m */; };
 		65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 65806F6B1DC713A7005B3DEC /* PushNative.m */; };
 		65A19D051DCDBBFC003C4996 /* PushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A19D041DCDBBFC003C4996 /* PushButton.m */; };
+		65BD9EC41DD9AE1000059812 /* RCTPushViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD9EC31DD9AE1000059812 /* RCTPushViewManager.m */; };
 		65BE8B701DD6F9DE00096981 /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE8B6F1DD6F9DE00096981 /* PushController.m */; };
-		65BE8B731DD7010C00096981 /* pushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE8B721DD7010C00096981 /* pushManager.m */; };
 		65BE8B831DD70AB200096981 /* PushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BE8B821DD70AB200096981 /* PushView.m */; };
 		65D9256D1DB7674800D5C34E /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925651DB7674800D5C34E /* Entypo.ttf */; };
 		65D9256E1DB7674800D5C34E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65D925661DB7674800D5C34E /* EvilIcons.ttf */; };
@@ -182,10 +182,10 @@
 		65806F6B1DC713A7005B3DEC /* PushNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNative.m; sourceTree = "<group>"; };
 		65A19D031DCDBBFC003C4996 /* PushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushButton.h; sourceTree = "<group>"; };
 		65A19D041DCDBBFC003C4996 /* PushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushButton.m; sourceTree = "<group>"; };
+		65BD9EC21DD9AE1000059812 /* RCTPushViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTPushViewManager.h; sourceTree = "<group>"; };
+		65BD9EC31DD9AE1000059812 /* RCTPushViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTPushViewManager.m; sourceTree = "<group>"; };
 		65BE8B6E1DD6F9DE00096981 /* PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
 		65BE8B6F1DD6F9DE00096981 /* PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
-		65BE8B711DD7010C00096981 /* pushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pushManager.h; sourceTree = "<group>"; };
-		65BE8B721DD7010C00096981 /* pushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pushManager.m; sourceTree = "<group>"; };
 		65BE8B811DD70AB200096981 /* PushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushView.h; sourceTree = "<group>"; };
 		65BE8B821DD70AB200096981 /* PushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushView.m; sourceTree = "<group>"; };
 		65D925651DB7674800D5C34E /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
@@ -329,8 +329,8 @@
 				65BE8B6F1DD6F9DE00096981 /* PushController.m */,
 				65806F6A1DC713A7005B3DEC /* PushNative.h */,
 				65806F6B1DC713A7005B3DEC /* PushNative.m */,
-				65BE8B711DD7010C00096981 /* pushManager.h */,
-				65BE8B721DD7010C00096981 /* pushManager.m */,
+				65BD9EC21DD9AE1000059812 /* RCTPushViewManager.h */,
+				65BD9EC31DD9AE1000059812 /* RCTPushViewManager.m */,
 				65BE8B811DD70AB200096981 /* PushView.h */,
 				65BE8B821DD70AB200096981 /* PushView.m */,
 				65A19D031DCDBBFC003C4996 /* PushButton.h */,
@@ -521,6 +521,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 84SCG89399;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -758,11 +759,11 @@
 			files = (
 				65BE8B831DD70AB200096981 /* PushView.m in Sources */,
 				65058ACA1DD30987002BAD61 /* ReactView.m in Sources */,
+				65BD9EC41DD9AE1000059812 /* RCTPushViewManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				65806F5C1DC71065005B3DEC /* TestController.m in Sources */,
 				65806F6C1DC713A7005B3DEC /* PushNative.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				65BE8B731DD7010C00096981 /* pushManager.m in Sources */,
 				65A19D051DCDBBFC003C4996 /* PushButton.m in Sources */,
 				65BE8B701DD6F9DE00096981 /* PushController.m in Sources */,
 			);
@@ -836,6 +837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 84SCG89399;
@@ -863,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84SCG89399;
 				HEADER_SEARCH_PATHS = (
