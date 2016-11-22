@@ -9,16 +9,6 @@
 #import "PushController.h"
 
 #import "AppDelegate.h"
-#import "PushButton.h"
-
-#import "RCTComponent.h"
-
-// 跳转页面相关
-#import "RCTRootView.h"
-#import "RCTBundleURLProvider.h"
-
-#import "ReactView.h"
-
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -29,7 +19,6 @@
 @end
 
 @implementation TestController
-
 
 - (void)viewWillAppear:(BOOL)animated{
   AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -50,10 +39,6 @@
   
     self.view.backgroundColor = [UIColor whiteColor];
   
-//  ReactView *reactView = [[ReactView alloc]initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 200)];
-//  
-//  [self.view addSubview:reactView];
-
   
   UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
   button.frame = CGRectMake(SCREEN_WIDTH / 2 - 150, 80, 300, 80);

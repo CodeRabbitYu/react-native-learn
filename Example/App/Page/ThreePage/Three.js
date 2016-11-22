@@ -67,13 +67,14 @@ export default class Three extends Component {
         // }
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    我是react-native页面
-                </Text>
 
 
                 <PushButton
-                    style={{width:100,height:100}}
+                    style={styles.buttonStyle}
+                    btnTitle="我是原生按钮呦！"
+                    onButtonClicked={(event) => {
+                        console.log('React事件' + event.nativeEvent.randomValue);
+                    }}
                     />
 
             </View>
@@ -84,24 +85,15 @@ export default class Three extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // backgroundColor: 'red',
     },
-    welcome: {
-        fontSize: 18,
-        textAlign: 'center',
-        margin: 10,
-    },
-    pushButtonStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width:100,
+    buttonStyle:{
+        width:200,
         height:100,
-        // backgroundColor:'blue',
+        backgroundColor:'red',
         alignSelf:'center',
-        marginTop:150
-    },
+        justifyContent: 'center',
+        marginTop:100
+    }
 });
 
 AppRegistry.registerComponent('Three', () => Three);

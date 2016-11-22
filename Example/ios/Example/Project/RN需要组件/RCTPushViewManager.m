@@ -7,7 +7,6 @@
 //
 
 #import "RCTPushViewManager.h"
-#import "PushView.h"
 
 @implementation RCTPushViewManager
 
@@ -16,12 +15,10 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-//  _button = [[PushButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-//  _button.ClickDelagate = self;
-//  return _button;
-  
-  PushView *pv = [[PushView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-  return pv;
+  _button = [[PushButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+  _button.ClickDelagate = self;
+  return _button;
+
 }
 
 RCT_EXPORT_VIEW_PROPERTY(btnTitle, NSString)

@@ -8,7 +8,7 @@
 
 #import "RCTViewManager.h"
 #import "PushButton.h"
-@interface RCTPushViewManager : RCTViewManager<ShareButtonClickedDelegate>
+@interface RCTPushViewManager : RCTViewManager<PushButtonClickedDelegate>
 
 /** <#type#> */
 @property (nonatomic, strong) PushButton *button;

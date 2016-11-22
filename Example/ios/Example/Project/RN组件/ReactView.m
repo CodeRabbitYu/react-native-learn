@@ -12,6 +12,7 @@
 
 @implementation ReactView
 
+// 这是一个封装好的react-native页面
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

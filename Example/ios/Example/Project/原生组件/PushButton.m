@@ -2,7 +2,6 @@
 //  PushButton.m
 //  Example
 //
-//  Created by 郭洪安 on 2016/11/5.
 //  Copyright © 2016年 Facebook. All rights reserved.
 //
 
@@ -12,7 +11,8 @@
 
 - (instancetype) initWithFrame:(CGRect)frame{
   if ((self = [super initWithFrame:frame])) {
-    [self addTarget:self action:@selector(share)
+    [self setTitle:@"Cain" forState:UIControlStateNormal];
+    [self addTarget:self action:@selector(click)
    forControlEvents:UIControlEventTouchUpInside];
   }
   return self;
@@ -25,7 +25,7 @@
 }
 
 - (void)setBtnTitle:(NSString *)btnTitle{
-  [self setTitle:@"为什么啊！！！" forState:(UIControlStateNormal)];
+  [self setTitle:btnTitle forState:(UIControlStateNormal)];
 }
 
 

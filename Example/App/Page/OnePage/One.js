@@ -44,7 +44,6 @@ export default class Time extends React.Component {
         };
     }
 
-
     static defaultProps = {
         // 每隔多少时间
         duration:1000,

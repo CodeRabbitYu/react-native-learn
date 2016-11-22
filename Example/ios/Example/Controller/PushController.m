@@ -9,8 +9,6 @@
 #import "PushController.h"
 #import "AppDelegate.h"
 #import "RCTRootView.h"
-
-#import "ReactView.h"
 #import "RCTBundleURLProvider.h"
 
 @interface PushController ()
@@ -24,8 +22,11 @@
 
   self.view.backgroundColor = [UIColor whiteColor];
   
+  self.navigationItem.title = @"我是ReactNative页面呦~";
+
   NSURL *jsCodeLocation;
-//  
+  
+  // 另外一种可以获得RN的类方法
 //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
   NSString * strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
   
@@ -42,8 +43,6 @@
                                                    launchOptions:nil];
   self.view = rootView;
   
-//  ReactView *reactView = [[ReactView alloc]initWithFrame:self.view.bounds];
-//  self.view = reactView;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
