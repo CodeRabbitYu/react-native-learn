@@ -19,7 +19,7 @@ export default class Four extends Component {
     // 组件加载完成
     render() {
         var titleConfig = {
-            title: '计时器',
+            title: '生命周期',
             style: {color:'black',fontSize:18,fontWeight:'500'}
         };
         return (
@@ -83,7 +83,7 @@ class Detail extends Component {
         this.state = {
             number : this.props.number
         };
-        console.log('state','组件初始的值');
+        console.log(this.state.number,'state初始的值');
     }
     render() {
         console.log('render','组件加载');
@@ -91,6 +91,7 @@ class Detail extends Component {
             <View style={styles.container}>
                 <Text onPress={this.onTextClick.bind(this)} style={styles.TextStyle}>点击我呀!</Text>
                 <Text style={styles.TextStyle}>{this.state.number}</Text>
+                <Text style={[styles.TextStyle,{fontSize:18}]}>(主要看控制台打印哦~)</Text>
             </View>
         );
     }
@@ -100,6 +101,7 @@ class Detail extends Component {
         this.setState({
             number:number
         })
+        console.log(this.state.number,'state变更的值');
     }
 }
 

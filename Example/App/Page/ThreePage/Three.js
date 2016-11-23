@@ -74,6 +74,7 @@ export default class Three extends Component {
                     btnTitle="我是原生按钮呦！"
                     onButtonClicked={(event) => {
                         console.log('React事件' + event.nativeEvent.randomValue);
+                        alert('原生点击事件' + event.nativeEvent.randomValue)
                     }}
                     />
 

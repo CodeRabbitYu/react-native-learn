@@ -16,6 +16,7 @@
     "react-native-image-picker": "^0.22.12",
     "react-native-navbar": "^1.5.4",
     "react-native-scrollable-tab-view": "^0.6.0",
+    "react-native-scrolling-menu": "^0.1.1",
     "react-native-swiper": "^1.5.2",
     "react-native-vector-icons": "^2.1.0",
     "react-native-video": "^0.9.0"

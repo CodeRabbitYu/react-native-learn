@@ -379,9 +379,10 @@ export default class Detail extends Component {
     // 返回首页
     popToHome(){
         InteractionManager.runAfterInteractions(()=>{
-            var currentRoute = this.props.navigator.getCurrentRoutes();
+            let currentRoute = this.props.navigator.getCurrentRoutes();
+            console.log(currentRoute);
             for(var i = 0 ; i <currentRoute.length ; i ++){
-                if (currentRoute[i].name == 'list'){
+                if (currentRoute[i].name == 'RTBar'){
                     this.props.navigator.popToRoute(currentRoute[i]);
                 }
             }
@@ -390,13 +391,15 @@ export default class Detail extends Component {
 
     render() {
         let rowData = this.state.rowData;
-        var titleConfig = {
+        let titleConfig = {
             title: rowData.title,
             style: {color:'black',fontSize:20,fontWeight:'600'}
         };
         const flexCompleted = this.getCurrentTimePercentage() * 100;
         const flexRemaining = (1 - this.getCurrentTimePercentage()) * 100;
         return (
+            //                            {/*popToHome ={() => this.popToHome()}*/}
+
             <View style={{backgroundColor:'white',flex:1}}>
                 {/*导航条*/}
                 <NavBar
@@ -404,7 +407,7 @@ export default class Detail extends Component {
                     style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                     leftButton={
                         <LeftNavBtn
-                            popToHome ={() => this.popToHome()}
+                            onPress = {() => this.popToHome()}
                         />
                     }
                 />

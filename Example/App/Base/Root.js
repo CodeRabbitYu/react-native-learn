@@ -23,6 +23,7 @@ import NavBar from 'react-native-navbar';
 import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
 import Cycle from '../Page/FourPage/Four';
+import News from '../Page/FivePage/Five';
 var Push = NativeModules.PushNative;
 
 // var ShareBt = requireNativeComponent('PushButton', PushButton);
@@ -69,6 +70,11 @@ export default class Root extends React.Component {
                 title : "周期",
                 icon: "周期",
                 component:Cycle
+            },{
+                key : 5,
+                title : "新闻",
+                icon: "新闻",
+                component:News
             },
 
           ],
@@ -122,7 +128,7 @@ export default class Root extends React.Component {
             <View style={{width:width/4,height:width/4}}>
                 <TouchableOpacity
                     onPress={()=>this.jumpToDay(sectionID)}>
-                    <Image source={{uri:rowData.icon}} style={{width:width/4,height:width/4,resizeMode:'cover'}} />
+                    <Image source={{uri:rowData.icon}} style={{width:width/4-20,height:width/4-20,resizeMode:'cover',margin:10}} />
                     <Text style={{textAlign:'center'}}>{rowData.title}</Text>
                 </TouchableOpacity>
             </View>

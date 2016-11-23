@@ -23,6 +23,8 @@ import Edit from './Component/Edit/Edit';
 import List from './Component/List/List';
 import Picture from './Component/Picture/Picture';
 
+// import RTBar from './RTBar';
+
 export default class Baby extends Component{
     constructor(props) {
         super(props);
@@ -85,14 +87,55 @@ export default class Baby extends Component{
         let tabNames = this.state.tabNames;
         let tabIconNames = this.state.tabIconNames;
         // 判断是否登录,如果没有登录跳转到登录页面, 如果登录进入首页
-        if (!this.state.isLogin){
-            return <Login afterLogin = {this.afterLogin} />
-        }
+        // if (!this.state.isLogin){
+        //     return <Login afterLogin = {this.afterLogin} />
+        // }
+        return (
+            //                    tabLabel="RTBar"
+            <View style={{ flex: 1 }}>
+            <Navigator
+                    onDidFocus={this.onDidFocus.bind(this)}
+                    initialRoute={{name:'RTBar',component: RTBar }}
+                    configureScene={(route) => {
+                        if (route.sceneConfig) {
+                            return route.sceneConfig;
+                        }
+                        return Navigator.SceneConfigs.FloatFromRight;
+                    } }
+                    renderScene={(route, navigator) => {
+                        let Component = route.component;
+                        return (
+                            <Component navigator = {navigator} route = {route} {...route.passProps} />
+                        )
+                    } }
+                />
+            </View>
+
+
+        );
+    }
+    onDidFocus(name){
+
+    }
+}
+
+class RTBar extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            tabNames: ['视频', '录制', '图片', '我的'],
+            tabIconNames: ['ios-videocam', 'ios-recording', 'ios-reverse-camera', 'ios-contact'],
+
+        };
+    }
+    render() {
+        let tabNames = this.state.tabNames;
+        let tabIconNames = this.state.tabIconNames;
         return (
             <ScrollableTabView
                 // renderTabBar={() => <ScrollableTabBar/>}
                 renderTabBar={() => <RTTabBar tabNames={tabNames} tabIconNames={tabIconNames}/>}
-                tabBarPosition='bottom'
+                tabBarPosition='overlayBottom'
                 onChangeTab={
                     (obj) => {
                         {/*console.log('被选中的tab下标：' + obj.i);*/}
@@ -108,34 +151,13 @@ export default class Baby extends Component{
                 prerenderingSiblingsNumber={1}
 
             >
-                <Navigator
-                    onDidFocus={this.onDidFocus.bind(this)}
-                    tabLabel="list"
-                    initialRoute={{name:'list',component:List}}
-                    configureScene={(route) => {
-                        if (route.sceneConfig) {
-                            return route.sceneConfig;
-                        }
-                        return Navigator.SceneConfigs.PushFromRight;
-                    } }
-                    renderScene={(route, navigator) => {
-                        let Component = route.component;
-                        return (
-                            <Component navigator = {navigator} route = {route} {...route.passProps} />
-                        )
-                    } }
-                />
-
-                {/*<List tabLabel="list"/>*/}
-                <Edit tabLabel="edit"/>
-                <Picture tabLabel="picture"/>
-                <Account tabLabel="account"/>
+                <List tabLabel="list" navigator={this.props.navigator} {...this.props}/>
+                <Edit tabLabel="edit" navigator={this.props.navigator} {...this.props}/>
+                <Picture tabLabel="picture" navigator={this.props.navigator} {...this.props}/>
+                <Account tabLabel="account" navigator={this.props.navigator} {...this.props}/>
 
             </ScrollableTabView>
         );
-    }
-    onDidFocus(name){
-
     }
 }
 
