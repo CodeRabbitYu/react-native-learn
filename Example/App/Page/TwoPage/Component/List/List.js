@@ -166,7 +166,6 @@ export default class List extends Component {
                         <RefreshControl
                             refreshing={this.state.isRefreshing}
                             onRefresh={this._onRefresh}
-
                         />
                     }
                 />

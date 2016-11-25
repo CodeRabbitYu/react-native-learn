@@ -87,9 +87,9 @@ export default class Baby extends Component{
         let tabNames = this.state.tabNames;
         let tabIconNames = this.state.tabIconNames;
         // 判断是否登录,如果没有登录跳转到登录页面, 如果登录进入首页
-        // if (!this.state.isLogin){
-        //     return <Login afterLogin = {this.afterLogin} />
-        // }
+        if (!this.state.isLogin){
+            return <Login afterLogin = {this.afterLogin} />
+        }
         return (
             //                    tabLabel="RTBar"
             <View style={{ flex: 1 }}>

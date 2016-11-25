@@ -16,36 +16,14 @@ import {
     InteractionManager
 } from 'react-native';
 
-import NavBar from 'react-native-navbar';
-import LeftNavBtn from '../../Base/Component/leftNavBtn';
+import Root from './Component/Base/Root';
 
 export default class Five extends Component {
 
-
-    popToHome(){
-        InteractionManager.runAfterInteractions(() => {
-            this.props.navigator.pop();
-        });
-    }
     render() {
-        var titleConfig = {
-            title: '新闻',
-            style: {color:'black',fontSize:18,fontWeight:'500'}
-        };
-        let items = ['Menu Item 1','Menu Item 2','Menu Item 3','Menu Item 4','Menu Item 5'];
-        return (
-            <View style={styles.container}>
-                <NavBar
-                    title={titleConfig}
-                    style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
-                    leftButton={
-                        <LeftNavBtn
-                            onPress={()=>this.popToHome()}
-                        />
-                    }
-                />
 
-            </View>
+        return (
+            <Root />
         );
     }
 }
