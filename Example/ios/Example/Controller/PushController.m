@@ -28,6 +28,7 @@
   
   // 另外一种可以获得RN的类方法
 //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:[NSString stringWithFormat:@"./App/Page/ThreePage/Three"] fallbackResource:nil];
+    
   NSString * strUrl = @"http://localhost:8081/index.ios.bundle?platform=ios&dev=true";
   
   jsCodeLocation = [NSURL URLWithString:strUrl];
@@ -45,16 +46,16 @@
   
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  [app.nav setNavigationBarHidden:NO animated:animated];
-  [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  [app.nav setNavigationBarHidden:YES animated:animated];
-  [super viewWillDisappear:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//  [app.nav setNavigationBarHidden:NO animated:animated];
+//  [super viewWillAppear:animated];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//  AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//  [app.nav setNavigationBarHidden:YES animated:animated];
+//  [super viewWillDisappear:animated];
+//}
 
 @end

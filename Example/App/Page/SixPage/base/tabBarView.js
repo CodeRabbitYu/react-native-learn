@@ -9,24 +9,17 @@ import {
 } from 'react-native';
 
 import TabNavigator from 'react-native-tab-navigator';
+import Home from '../containers/homeContainer';
+import Main from '../containers/detail';
 
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import Home from '../Pages/News/News';
-import Main from '../Pages/Main/Main';
-import ConnectComponent from '../Common/ConnectComponent';
-
-// const HomeUI=ConnectComponent(Home);
-
-import HomeContainer from '../Common/HomeContainer';
 
 
 const tabBarItems = [
-    { title: '新闻', icon: () =>  <Icon name="ios-home" size={30} color='#333' />,
-        selectedIcon: () => <Icon name="ios-home" size={30} color='#d81e06' />
-        ,component: HomeContainer },
-    { title: '我的', icon: () => <Image style={{ width: 30, height: 30 }} source={require('../Resource/main-normal.png')} />,
-        selectedIcon: () => <Image style={{ width: 30, height: 30 }} source={require('../Resource/main-selected.png')} />,
+    { title: '新闻', icon: () => <Image style={{ width: 30, height: 30 }} source={require('../resource/news-normal.png')} />,
+        selectedIcon: () => <Image style={{ width: 30, height: 30 }} source={require('../resource/news-selected.png')} />
+        ,component: Home },
+    { title: '我的', icon: () => <Image style={{ width: 30, height: 30 }} source={require('../resource/main-normal.png')} />,
+        selectedIcon: () => <Image style={{ width: 30, height: 30 }} source={require('../resource/main-selected.png')} />,
         component: Main },
     // { title: '关于', icon: () => <Image style={{ width: 30, height: 30 }} source={require('./imgs/me.png') }/>, Component: HomeContainer },
 ]

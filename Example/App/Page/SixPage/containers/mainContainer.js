@@ -9,26 +9,13 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View,
-    InteractionManager
+    View
 } from 'react-native';
 
-import NavBar from 'react-native-navbar';
-import LeftNavBtn from '../../../../../Base/Component/leftNavBtn';
-
-export default class Main extends Component {
-
+export default class mainContainer extends Component {
     render() {
-        var titleConfig = {
-            title: '我的',
-            style: {color:'black',fontSize:18 ,fontWeight:'500'}
-        };
         return (
             <View style={styles.container}>
-                <NavBar
-                    title={titleConfig}
-                    style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
-                />
                 <Text style={styles.welcome}>
                     Welcome to React Native!
                 </Text>
@@ -48,6 +35,8 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
@@ -61,4 +50,3 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
-

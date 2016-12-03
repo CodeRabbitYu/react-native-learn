@@ -24,6 +24,10 @@ import Time from '../Page/OnePage/One';
 import Baby from '../Page/TwoPage/Two';
 import Cycle from '../Page/FourPage/Four';
 import News from '../Page/FivePage/Five';
+import Redux from '../Page/SixPage/Six';
+
+
+
 var Push = NativeModules.PushNative;
 
 // var ShareBt = requireNativeComponent('PushButton', PushButton);
@@ -72,9 +76,14 @@ export default class Root extends React.Component {
                 component:Cycle
             },{
                 key : 5,
-                title : "新闻",
+                title : "百思不得姐",
                 icon: "新闻",
                 component:News
+            },{
+                key : 6,
+                title : "Redux",
+                icon: "Redux",
+                component:Redux
             },
 
           ],

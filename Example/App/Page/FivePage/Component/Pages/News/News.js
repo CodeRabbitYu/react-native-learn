@@ -27,30 +27,29 @@ export default class News extends Component {
     constructor(props){
         super(props);
         this.state = {
-            channelListArr : [],
-            tidArr : [],
+            typeArr : [
+                {
+                    'title':'全部',
+                    'type':'',
+                },
+                {
+                    'title':'视频',
+                    'type':'41',
+                },
+                {
+                    'title':'图片',
+                    'type':'10',
+                },
+                {
+                    'title':'段子',
+                    'type':'29',
+                },
+                {
+                    'title':'声音 ',
+                    'type':'31',
+                },
+            ],
         }
-    }
-    componentDidMount() {
-        this.loadData();
-    }
-
-    loadData(){
-        let url = 'http://route.showapi.com/109-34?showapi_appid='+this.props.showapi_appid+'&showapi_sign='+this.props.showapi_sign;
-        // console.log(url);
-        fetch(url)
-            .then((response) => response.json())
-            .then((responseData)=> {
-                // console.log(responseData);
-                let channelList = responseData['showapi_res_body']['channelList'];
-
-                this.setState({
-                    channelListArr : channelList
-                });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
     }
 
     render() {
@@ -66,13 +65,13 @@ export default class News extends Component {
                 style={{height:44,borderBottomWidth:1,borderBottomColor:'#dddddd'}}
                 />
                 {
-                    this.state.channelListArr.length > 0 ?
+                    this.state.typeArr.length > 0 ?
                         <ScrollableTabView
                             renderTabBar={() => <ScrollableTabBar/>}>
                             {
-                                this.state.channelListArr.map((item, i) => {
+                                this.state.typeArr.map((item, i) => {
                                     return (
-                                        <NewsList key={i} tabLabel={item.name} channelId={item.channelId}
+                                        <NewsList key={i} tabLabel={item.title} type={item.type}
                                                   navigator={this.props.navigator} {...this.props}/>
                                     )
                                 })
